@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """Module for the command interpreter entry point."""
 
-# Import necessary modules
+# Importng necessary modules
 import cmd
 from models.base_model import BaseModel
 from models import storage
