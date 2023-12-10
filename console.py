@@ -141,7 +141,7 @@ class HBNBCommand(cmd.Cmd):
                 print("** class doesn't exist **")
             else:
                 no_list = [str(obj) for key, obj in storage.all().items()
-                      if type(obj).__name__ == line[0]]
+                           if type(obj).__name__ == line[0]]
                 print(no_list)
         else:
             create_list = [str(obj) for key, obj in storage.all().items()]
@@ -209,5 +209,4 @@ class HBNBCommand(cmd.Cmd):
 
 
 if __name__ == '__main__':
-    HBNBCommand().cmdloop()  # Run the command loop
-
+    HBNBCommand().cmdloop()
