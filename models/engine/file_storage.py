@@ -35,13 +35,15 @@ class FileStorage:
         from models.place import Place
         from models.review import Review
 
-        classes = {"BaseModel": BaseModel,
-                  "User": User,
-                  "State": State,
-                  "City": City,
-                  "Amenity": Amenity,
-                  "Place": Place,
-                  "Review": Review}
+        classes = {
+            "BaseModel": BaseModel,
+            "User": User,
+            "State": State,
+            "City": City,
+            "Amenity": Amenity,
+            "Place": Place,
+            "Review": Review}
+
         return classes
 
     def reload(self):
@@ -95,7 +97,7 @@ class FileStorage:
                 "longitude": float,
                 "amenity_ids": list
             },
-            "Review": { 
+            "Review": {
                 "place_id": str,
                 "user_id": str,
                 "text": str
