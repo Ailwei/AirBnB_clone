@@ -81,7 +81,7 @@ class TestUserInstantiation(unittest.TestCase):
         account.id = "245678"
         account.created_at = account.updated_at = fecha
         user_str = account.__str__()
-        self.assertIn("[User] (24689)", user_str)
+        self.assertIn("[User] (345)", user_str)
         self.assertIn("'id': '13579'", user_str)
         self.assertIn("'created_at': " + fecha_repr, user_str)
         self.assertIn("'updated_at': " + fecha_repr, user_str)
@@ -94,7 +94,7 @@ class TestUserInstantiation(unittest.TestCase):
     def test_instantiation_with_kwargs(self):
         """Test instantiation with keyword arguments."""
         fecha = datetime.today()
-        fecha_iso = dt.isoformat()
+        fecha_iso = fecha.isoformat()
         user = User(id="345", created_at=fecha_iso, updated_at=fecha_iso)
         self.assertEqual(user.id, "345")
         self.assertEqual(user.created_at, fecha)
