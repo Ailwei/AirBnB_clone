@@ -16,7 +16,6 @@ class BaseModel:
             - *args: List of arguments
             - **kwargs: Dictionary of key-value arguments
         """
-        
 
         if kwargs is not None and kwargs != {}:
             for key in kwargs:
