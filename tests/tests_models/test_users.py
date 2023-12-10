@@ -78,11 +78,11 @@ class TestUserInstantiation(unittest.TestCase):
         fecha = datetime.today()
         fecha_repr = repr(fecha)
         account = User()
-        account.id = "245678"
+        account.id = "23456"
         account.created_at = account.updated_at = fecha
         user_str = account.__str__()
-        self.assertIn("[User] (345)", user_str)
-        self.assertIn("'id': '13579'", user_str)
+        self.assertIn("[User] (23456)", user_str)
+        self.assertIn("'id': '23456'", user_str)
         self.assertIn("'created_at': " + fecha_repr, user_str)
         self.assertIn("'updated_at': " + fecha_repr, user_str)
 

@@ -115,11 +115,11 @@ class TestPlaceInstantiation(unittest.TestCase):
         fecha = datetime.today()
         fecha_repr = repr(fecha)
         loc = Place()
-        loc.id = "123456"
+        loc.id = "2468"
         loc.created_at = loc.updated_at = fecha
         loc_str = loc.__str__()
-        self.assertIn("[Place] (123456)", loc_str)
-        self.assertIn("'id': '123456'", loc_str)
+        self.assertIn("[Place] (2468)", loc_str)
+        self.assertIn("'id': '2468'", loc_str)
         self.assertIn("'created_at': " + fecha_repr, loc_str)
         self.assertIn("'updated_at': " + fecha_repr, loc_str)
 

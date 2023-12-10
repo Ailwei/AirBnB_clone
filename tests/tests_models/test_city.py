@@ -167,10 +167,10 @@ class TestCityToDict(unittest.TestCase):
     def test_todict_output(self):
         fecha = datetime.today()
         citi = City()
-        citi.id = "123456"
+        citi.id = "10111"
         citi.created_at = citi.updated_at = fecha
         this_dict = {
-            'id': '123456',
+            'id': '10111',
             '__class__': 'City',
             'created_at': fecha.isoformat(),
             'updated_at': fecha.isoformat(),

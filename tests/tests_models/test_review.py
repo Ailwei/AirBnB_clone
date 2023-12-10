@@ -177,10 +177,10 @@ class TestResenaToDict(unittest.TestCase):
     def test_to_dict_output(self):
         fecha = datetime.today()
         resena = Review()
-        resena.id = "123456"
+        resena.id = "21006"
         resena.created_at = resena.updated_at = fecha
         tdict = {
-            'id': '123456',
+            'id': '21006',
             '__class__': 'Review',
             'created_at': fecha.isoformat(),
             'updated_at': fecha.isoformat(),
