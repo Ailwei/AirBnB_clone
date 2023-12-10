@@ -131,7 +131,7 @@ class TestPlaceInstantiation(unittest.TestCase):
         fecha = datetime.today()
         fecha_iso = fecha.isoformat()
         loc = Place(id="345", created_at=fecha_iso, updated_at=fecha_iso)
-        self.assertEqual(fecha.id, "345")
+        self.assertEqual(loc.id, "345")
         self.assertEqual(loc.created_at, fecha)
         self.assertEqual(loc.updated_at, fecha)
 
@@ -176,7 +176,7 @@ class TestPlaceSave(unittest.TestCase):
         self.assertLess(first_updated_at, second_updated_at)
         sleep(0.05)
         loc.save()
-        self.assertLess(second_updated_at, loco.updated_at)
+        self.assertLess(second_updated_at, loc.updated_at)
 
     def test_savewith_arg(self):
         loc = Place()
