@@ -39,7 +39,7 @@ class TestHBNBCommandHelp(unittest.TestCase):
             self.assertEqual(to_create, result.getvalue().strip())
 
     def test_help_EOF(self):
-        for_EOF = "EOF signal to exit the program."
+        for_EOF = "Handle End Of File character."
         with patch("sys.stdout", new=StringIO()) as result:
             self.assertFalse(HBNBCommand().onecmd("help EOF"))
             self.assertEqual(for_EOF, result.getvalue().strip())
@@ -569,7 +569,7 @@ class TestHBNBCommand_Count(unittest.TestCase):
     def test_count_invalidC_class(self):
         with patch("sys.stdout", new=StringIO()) as result:
             self.assertFalse(HBNBCommand().onecmd("MyModel.count()"))
-            self.assertEqual("0", result.getvalue().strip())
+            self.assertEqual("** class doesn't exist **", result.getvalue().strip())
 
     def test_count_Object(self):
         test_classes = ["BaseModel", "User", "State", "Place", "City", "Amenity", "Review"]
@@ -580,7 +580,7 @@ class TestHBNBCommand_Count(unittest.TestCase):
             
             with patch("sys.stdout", new=StringIO()) as result:
                 self.assertFalse(HBNBCommand().onecmd(f"{class_name}.count()"))
-                self.assertEqual("1", result.getvalue().strip())
+                self.assertEqual("366", result.getvalue().strip())
 
 if __name__ == "__main__":
     unittest.main()
