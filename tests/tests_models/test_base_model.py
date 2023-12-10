@@ -64,7 +64,11 @@ class TestBaseModel_instantiation(unittest.TestCase):
     def test_instantiation_withkwargs(self):
         fecha = datetime.today()
         fecha_iso = fecha.isoformat()
-        base_m = BaseModel(id="345", created_at=fecha_iso, updated_at=fecha_iso)
+        base_m = BaseModel(
+                id="345",
+                created_at=fecha_iso,
+                updated_at=fecha_iso
+                )
         self.assertEqual(base_m.id, "345")
         self.assertEqual(base_m.created_at, fecha)
         self.assertEqual(base_m.updated_at, fecha)
@@ -76,7 +80,11 @@ class TestBaseModel_instantiation(unittest.TestCase):
     def test_instantiation_withargs_and_kwargs(self):
         fecha = datetime.today()
         fecha_iso = fecha.isoformat()
-        base_m = BaseModel("12", id="345", created_at=fecha_iso, updated_at=fecha_iso)
+        base_m = BaseModel(
+                "12", id="345",
+                created_at=fecha_iso,
+                updated_at=fecha_iso
+                )
         self.assertEqual(base_m.id, "345")
         self.assertEqual(base_m.created_at, fecha)
         self.assertEqual(base_m.updated_at, fecha)
@@ -186,4 +194,3 @@ class TestBaseModel_todict(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-
