@@ -35,14 +35,14 @@ class FileStorage:
         from models.place import Place
         from models.review import Review
 
-        class_ = {"BaseModel": BaseModel,
+        classes = {"BaseModel": BaseModel,
                   "User": User,
                   "State": State,
                   "City": City,
                   "Amenity": Amenity,
                   "Place": Place,
                   "Review": Review}
-        return class_
+        return classes
 
     def reload(self):
         """Reloads the stored objects."""
@@ -50,8 +50,8 @@ class FileStorage:
             return
         with open(FileStorage.__file_path, "r", encoding="utf-8") as file:
             objdict_ = json.load(file)
-            objdict_ = {k: self.class_()[v["__class__"]](**v)
-                        for k, v in objdict_.items()}
+            objdict_ = {y: self.classes()[x["__class__"]](**x)
+                        for y, x in objdict_.items()}
             # TODO: should this overwrite or insert?
             FileStorage.__objects = objdict_
 
